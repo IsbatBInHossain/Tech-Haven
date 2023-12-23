@@ -1,3 +1,5 @@
+const { off } = require('process')
+
 module.exports = {
   root: true,
   extends: ['plugin:@next/next/recommended', '@payloadcms'],
@@ -5,5 +7,6 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'no-console': off,
   },
 }
