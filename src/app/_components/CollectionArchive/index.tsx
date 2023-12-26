@@ -6,7 +6,6 @@ import qs from 'qs'
 import type { Product } from '../../../payload/payload-types'
 import type { ArchiveBlockProps } from '../../_blocks/ArchiveBlock/types'
 import { Card } from '../Card'
-import { Gutter } from '../Gutter'
 import { PageRange } from '../PageRange'
 import { Pagination } from '../Pagination'
 
@@ -182,7 +181,7 @@ export const CollectionArchive: React.FC<Props> = props => {
         )}
         <div className={classes.grid}>
           {results.docs?.map((result, index) => {
-            return <Card doc={result} relationTo={relationTo} showCategories />
+            return <Card doc={result} relationTo={relationTo} key={index} showCategories />
           })}
         </div>
         {results.totalPages > 1 && populateBy !== 'selection' && (
